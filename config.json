@@ -1,0 +1,38 @@
+{
+    "data_paths": {
+      "transactions_file": "./data/raw/transactions_obf.csv",
+      "labels_file": "./data/raw/labels_obf.csv"
+    },
+    "output_paths": {
+      "preprocessed_data_file": "./data/processed/df_preprocessed.csv",
+      "fraud_detection_results_file": "./output/df_fraud_detection_results.csv",
+      "plots_dir": "./plots"
+    },
+    "model_settings": {
+      "numeric_columns_to_scale": [
+        "transactionAmount",
+        "availableCash",
+        "accountNumber_freq",
+        "merchantId_freq",
+        "mcc_freq",
+        "cash_pct_spent"
+      ],
+      "columns_to_drop": ["eventId", 
+      "merchantId", 
+      "mcc", 
+      "merchantCountry", 
+      "merchantZip", 
+      "weekday", 
+      "posEntryMode" ,
+      "hour", 
+      "transactionTime", 
+      "reportedTime", 
+      "accountNumber"],
+      "contamination": 0.1,
+      "random_state": 42
+    },
+    "logging": {
+      "log_file": "./logs/main.log",
+      "log_level": "INFO"
+    }
+}
